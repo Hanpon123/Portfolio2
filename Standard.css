@@ -1,0 +1,124 @@
+.show , .home .fade {position:relative;animation:animatebottom 1.5s}@keyframes animatebottom{from{bottom:-300px;opacity:0} to{bottom:0;opacity:1}}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body {
+    background-image: url("/img/bg.jpg");
+    margin-right:auto;
+    margin-left:auto;
+    /*max-width: 1620px;*/
+}
+
+.start{
+    position: fixed;
+    right: 0%;
+    top: 0%;
+    left: 0%;
+    z-index: 2;
+}
+
+.start a{
+    text-decoration: none;
+    font-size: 30px;
+    color: white;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    padding-left: 45px;
+    padding-right: 45px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    
+}
+
+.start l{
+    text-decoration: none;
+    font-size: 36px;
+    color: white;
+    font-family: 'Leckerli One', cursive;
+    padding-right: 15px;
+}
+
+.start td {
+    margin-top: 15px;
+    margin-bottom: 7px;
+    display: inline-block;
+}
+
+.start table {
+    padding: 0px;
+    margin-top: -8px;
+    text-align: center;
+}
+
+.start td a:hover{
+    background: #0f429f;
+    transition: 0.5s;
+}
+
+.start td a:active{
+    background: #0b275b;
+    transition: 0.1s;
+}
+
+.foot{
+    margin-top: 0px;
+    margin-bottom: -10px;
+}
+
+.foot j{
+    color:white;
+    font-size: 24px;
+    font-family: 'Pridi', serif;
+    font-weight: 500px;
+    margin-left: 20px;
+}
+
+.foot a{
+    text-decoration: none;
+    color: white;
+    font-size: 19px;
+    font-family: 'Pridi', serif;
+    font-weight: 400;
+    margin-left: 20px;
+}
+
+.foot a:hover{
+    text-decoration: underline;
+}
+
+.foot td img{
+    margin-left: 20px;
+    margin-top: -40px;
+}
+
+.foot t{
+    color:white;
+    font-size: 31px;
+    font-family: 'Pridi', serif;
+    font-weight: 500px;
+    margin-left: 20px;
+}
+
+.foot .contact{
+    color:white;
+    font-size: 26px;
+    font-family: 'Pridi', serif;
+    font-weight: 500px;
+    margin-left: 20px;
+}
+
+.start .bg {
+    background-color: #0b275b;
+    height: 5.33px;
+}
+
+/*ฝากกกกก ของ 404 Eror*/
+.backHome{
+    background-color: orange;
+}
+
+.backHome:hover{
+    background-color: rgb(248, 186, 71);
+}
+/*ฝากกกกก ของ 404 Eror*/

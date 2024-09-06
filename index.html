@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Hanpon's Portfolio</title>
+        <link rel="shortcut icon" type="image/x-icon" href="/img/เพชร.png" />
+        <meta charset = "UTF-8"></charset>
+        <link rel = "stylesheet" href="Standard.css">
+        <link rel = "stylesheet" href="Home.css">
+        <link rel = "stylesheet" href= "Profile.css">
+        <link rel = "stylesheet" href = "Education.css">
+        <link rel = "stylesheet" href = "Activity.css">
+        <link rel = "stylesheet" href = "Portfolio.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Pridi:wght@300;400;500;600&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Leckerli+One&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <script>
+            window.onload = function() {
+                var round = 5
+                var page=0;
+                var angleLeft = document.getElementById("angleLeft");
+                var angleRight = document.getElementById("angleRight");
+                var slide = document.getElementById("slide");
+
+                function goToSlide(index) {
+                    const translateXValue = -index * 16.64 + "%";
+                    slide.style.transform = `translateX(${translateXValue})`;
+                }
+
+                function nextSlide() {
+                    if (page < round - 1) {
+                        page++;
+                    } else {
+                        page = 0;
+                    }
+                    goToSlide(page);
+                    }
+
+                    function prevSlide() {
+                    if (page > 0) {
+                        page--;
+                    } else {
+                        page = round - 1;
+                    }
+                    goToSlide(page);
+                }
+
+                const interval = 5000;                         
+                
+                angleLeft.addEventListener("click", () => {
+                    prevSlide();
+                    clearInterval(autoSlider);
+                });
+
+                angleRight.addEventListener("click", () => {
+                    nextSlide();
+                    clearInterval(autoSlider);
+                });                        
+
+                let autoSlider = setInterval(nextSlide, interval);
+            };
+        </script>
+
+        <script>
+            // JavaScript
+            function fadeInOnScroll() {
+                var education = document.querySelector('.education');
+                var tEducation = education.getBoundingClientRect().top;
+                var bEducation = education.getBoundingClientRect().bottom;
+
+                var activity = document.querySelector('.activity');
+                var tActivity = activity.getBoundingClientRect().top;
+                var bActivity = activity.getBoundingClientRect().bottom;
+
+                var profile = document.querySelector('.profile');
+                var tProfile = profile.getBoundingClientRect().top;
+                var bProfile = profile.getBoundingClientRect().bottom;
+
+                var portfolio = document.querySelector('.portfolio');
+                var tPortfolio = portfolio.getBoundingClientRect().top;
+                var bPortfolio = portfolio.getBoundingClientRect().bottom;
+
+                var fade = document.querySelector('.fade');
+                var tFade = fade.getBoundingClientRect().top;
+                var bFade = fade.getBoundingClientRect().bottom;
+                
+                var windowHeight = window.innerHeight;
+                
+
+                if (tEducation < windowHeight || tEducation === windowHeight) {
+                    education.classList.add('show');
+                } else {
+                    education.classList.remove('show');
+                }
+                if (tActivity < windowHeight || tActivity === windowHeight) {
+                    activity.classList.add('show');
+                } else {
+                    activity.classList.remove('show');
+                }
+                if (tProfile < windowHeight || tProfile === windowHeight) {
+                    profile.classList.add('show');
+                } else {
+                    profile.classList.remove('show');
+                }
+                if (tPortfolio < windowHeight || tPortfolio === windowHeight) {
+                    portfolio.classList.add('show');
+                } else {
+                    portfolio.classList.remove('show');
+                    console.log("window = "+windowHeight)
+                    console.log("port = " + tPortfolio)
+                }
+                // if (tFade < windowHeight) {
+                //     fade.setAttribute("id", "show")
+                // } else {
+                //     fade.setAttribute("id", "hidden")
+                // }
+            }
+
+            // เพิ่ม event listener เพื่อตรวจสอบเมื่อเกิด scroll
+            window.addEventListener('scroll', fadeInOnScroll);
+
+            // เรียกใช้ฟังก์ชันเพื่อตรวจสอบเริ่มต้น
+            window.dispatchEvent(new Event('scroll'));
+        </script>
+
+    </head>
+
+    <body>
+        <div class="start">
+            <table width="100%" style="background: #0B2D6A;" border="0px"><tr><td>
+                <center><table width="1250px" border="0px">
+                    <tr>
+                        <td><l id = "Logo">Hanpon.html</l></td>
+                        <td><a href = "#home">Home</a></td>
+                        <td><a href = "#profile">About</a></td>
+                        <td><a href = "#education">Education</a></td>
+                        <td><a href = "#activity">Activity</a></td>
+                        <td><a href = "#portfolio">Portfolio</a></td>
+                    </tr>
+                </table></center>
+            </td></tr></table>
+            <div class="bg">
+            </div>
+        </div>
+
+        <div class="home" id="home">
+            <table width="100%" height="550px" align="center" border="0px" style="background: #0B2D6A; margin-top: -40px; margin-bottom: -60px;"><tr><td>
+                <table class="fade" width="100%" border="0px" style="background-image: url('https://www.pngplay.com/wp-content/uploads/7/Networking-Diagram-Transparent-Background.png'),url('https://www.transparentpng.com/thumb/networking/networking-free-transparent-png-7.png'),url('https://www.pngplay.com/wp-content/uploads/7/Global-Networking-Transparent-PNG.png'); background-repeat: no-repeat,no-repeat,no-repeat; background-position: center bottom,left top,right top; background-size: 40%,32%,30%;"><tr><td>        
+                    <center><table  border="0px" width="1250px">
+                        <tr>
+                            <td colspan="4" height="50px"></td>
+                        </tr>
+                        <tr>
+                            <td height="100px" colspan="4" align="center"><h>Home</h></td>
+                        </tr>
+                        <tr>
+                            <td width="200px" rowspan="3" align="right"><img loading="lazy" src = "/img/com3-removebg-preview.png" style="margin-right: -60px; margin-bottom: -60px;" height="400px" width="360px"></td>
+                            <td width="200px" align="left" rowspan="2" ><me class="me"><img loading="lazy" src = "/img/me.png" height="450px" style="margin-right: 50px; margin-bottom: -26px; filter:contrast(1.05); filter: brightness(1.15);"></img></me></td>
+                            <td valign="bottom" height="230px" align="center">
+                                <div style="background-color: white; width: 320px; height: 180px; border: 5px solid #0C2B68; border-radius: 25px; cursor: default;" >
+                                    <p style="font-size: 25px; text-align: left; padding-left: 20px; font-family: Pridi; font-weight: bold; line-height: 20px; color: #0C2B68;">นายหาญพล พรหมสมบัติ</p>
+                                    <p style="font-size: 19px; text-align: left; padding-left: 20px; font-family: Pridi;  line-height: 18px; color: #0A3474;">นักเรียนโครงการห้องเรียนพิเศษ SMTE</p>
+                                    <p style="font-size: 19px; text-align: left; padding-left: 20px; font-family: Pridi;  line-height: 18px; color: #0A3474;;">ชั้นมัธยมศึกษาปีที่ 6 ปีการศึกษา 2566</p>
+                                    <p style="font-size: 19px; text-align: left; padding-left: 20px; font-family: Pridi;  line-height: 18px; color: #0A3474;">โรงเรียนมหาวชิราวุธ จังหวัดสงขลา</p>
+                                </div>
+                            </td>
+                            <td width="80px" ><j class=""></j></td>
+
+                        </tr>
+                        <tr>
+                            <td valign="center" align="center"><a href="#profile">about me</a>
+                            </td>
+                            <td width="80px" ><j class=""></j></td>
+                        </tr>
+                        <tr>
+                            <td width="80px" height="10px"><j class=""></j></td>
+                            <td width="80px"><j class=""></j></td>
+                            <td width="80px" ><j class=""></j></td>
+                        </tr>
+                    </table></center>
+                </td></tr></table>
+            </td></tr></table>
+        </div>
+
+        <div class="profile" id="profile">
+            <center><table align="center" width="1250px" border="0px">
+                <tr height="100px" ><td></td></tr>
+                <tr height="100px" align="center">
+                    <td>
+                        <h1>About</h1>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <img loading="lazy" src = "/img/เพชร.png" width="180 px" height="180px"></img></br>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="1250px" height="300px" align="center">
+                        <div class="text">
+                            สวัสดีครับ ผมนายหาญพล พรหมสมบัติ ชื่อเล่น เพชร เป็นนักเรียนโรงเรียนหาวชิราวุธ จังหวัดสงขลา ชั้น ม.6 โครงการห้องเรียนพิเศษ SMTE
+                            ผมมีความสนใจในด้านคอมพิวเตอร์เป็นอย่างมาก โดยความสนใจในคอมพิวเตอร์ของผมนั้นเริ่มจากการได้เรียนวิชาวิทยาการคำนวณในชั้น ม.4
+                            และผมได้เริ่มศึกษาค้นคว้าด้วยต้นเองมาจนกระทั่ง ผมได้รับคัดเลือกในการเข้าอบรม ค่าย 1 สอวน.คอมพิวเตอร์ ณ โรงเรียนดีบุกพังงาวิทยายน 
+                            ภายในค่ายผมได้เรียนการเขียนโปรแกรมด้วยภาษา C ในค่ายเป็นเวลา 15 วัน หลังสิ้นสุดค่ายทำให้ผมมีความสนใจในการเขียนโปรแกรมมากขึ้น
+                            และผมนั้นสนใจในการสร้างเว็บไซต์ ผมจึงได้เริ่มศึกษาการเขียนเว็บไซต์ด้วย HTML ,CSS และ Javascript และได้เข้าแข่งขันในรายการต่าง ๆ
+                            เพื่อสะสมความรู้และนำมาประยุกต์ใช้ในการเรียนคอมพิวเตอร์ เช่น เข้าร่วมค่าย MOSCAMP SONGKHLA, แข่งขันโครงงานระดับชาติต่าง ๆ 
+                            การแข่งขันฟิสิกส์สัประยุทธ์ระดับชาติ, การเข้าร่วมโครงการ GTC : Web design skill for university applicants และค่าย ITCamp 19
+                            ผมมีความตั้งใจที่จะศึกษาต่อในคณะวิศวกรรมศาสตร์ จุฬาลงกรณ์มหาวิทยาลัย เพราะผมต้องการพัฒนาทักษะ และนำความรู้ที่ได้จากการศึกษา
+                            มาประยุกต์ใช้ในการทำงาน เพื่อพัฒนาเว็บไซต์ เทคโนโลยี และนวัตกรรมต่าง ๆ ให้กับคนรุ่นใหม่ในอนาคตต่อไปครับ
+                        </div>
+                    </td>
+                </tr>
+            </table></center>
+        </div>
+
+        <div class="education" id="education">
+            <center><table align="center" width="1250px" border = "0px">
+                <tr>
+                    <td width="633px" height="100px" colspan="3"></td>
+                </tr>
+                <tr>
+                    <td width="633px" height="100px" colspan="3" align = "center"><h1>Education</h1></td>
+                </tr>
+                <tr>
+                    <td align="center" valign="center" width="250px" height="100px"><div class="level">ระดับชั้น ป.4 - ป.6</div></td>
+                    <td align="center" width="633px" height="100px"><div class="level">ระดับชั้น ม.1 - ม.3</div></td>
+                    <td align="center"><div class="level">ระดับชั้น ม.4 - ม.6</div></td>
+                </tr>
+                <tr>
+                    <td align="center" width="416px" height="100px"><img loading="lazy" src='/img/absk-removebg-preview.png' width="208px" height="250px"></td>
+                    <td width="416px" align="center" height="100px"><img loading="lazy" src="/img/mvsk-removebg-preview.png" width="230px" height="230px"></td>
+                    <td width="416px" align="center" height="100px"><img loading="lazy" src="/img/mvsk-removebg-preview.png" width="230px" height="230px"></td>
+                </tr>
+                <tr>
+                    <td align="center" width="250px" height="70px"><div class="detail">โรงเรียน : อนุบาลสงขลา</div></td>
+                    <td align="center" width="633px" ><div class="detail">โรงเรียน : มหาวชิราวุธ จังหวัดสงขลา</div></td>
+                    <td align="center"><div class="detail">โรงเรียน : มหาวชิราวุธ จังหวัดสงขลา</div></td>
+                </tr>
+                <tr>
+                    <td align="center" height="70px"><div class="detail">แผนการเรียน : วิทย์-คณิต<br>(โครงการห้องเรียนพิเศษ SMT)</div></td>
+                    <td align="center"><div class="detail">แผนการเรียน : วิทย์-คณิต<br>(โครงการห้องเรียนพิเศษ SMA)</div></td>
+                    <td align="center"><div class="detail">แผนการเรียน : วิทย์-คณิต<br>(โครงการห้องเรียนพิเศษ SMTE)</div></td>
+                </tr>
+                <tr>
+                    <td align="center" height="70px"><div class="detail">เกรดเฉลี่ยสะสม : 3.82</div></td>
+                    <td align="center"><div class="detail">เกรดเฉลี่ยสะสม : 3.76</div></td>
+                    <td align="center"><div class="detail">เกรดเฉลี่ยสะสม : 3.99 <br>(เกรดเฉลี่ย 5 ภาคเรียน)</div></td>
+                </tr>
+
+                <tr>
+                    <td align="center" colspan="3">
+                        <img loading="lazy" style="margin-right: 50px; margin-top: 50px;" width="550px" src="./img/img8.jpg" />
+                        <img loading="lazy" style="margin-left: 50px;" width="550px" src="./img/img11.jpg" />
+                    </td>
+                </tr>
+
+            </table></center>
+        </div>
+
+        <div class="activity" id="activity">
+            <center><table align="center" width="1250px" border="0px">
+                <tr height="100px">
+                    <td colspan="3"></td>
+                </tr>
+                <tr height="100px">
+                    <td align="center" height="100px" colspan="3"><h1>Activity</h1></td>
+                </tr>
+                
+                <tr height="425px" >
+                    <td colspan="3">
+                    <div style="display: flex; align-items: center; justify-content: center;">
+                        <i id="angleLeft" class="fa-solid fa-angle-left fa-beat-fade"></i>
+                        <div class="scroll" style="width: 1100px;">
+                            <div class="slide" id="slide">
+
+                            <center><div class="card" ><a href="activities.html?id=0">
+                                <img loading="lazy" src="/activity/iypt/รับรางวัลฟิสิกส์สัปทีม.jpg" alt="Avatar" style="width:100%">
+                                <div class="container">
+                                    <h4><b>การแข่งขันฟิสิกส์สัปประยุทธ์<br>ระดับชาติ</b></h4> 
+                                    <p>กระทรวงศึกษาธิการ</p> 
+                                </div>
+                            </a></div></center>
+
+                            <center><div class="card" ><a href="activities.html?id=1">
+                                <img loading="lazy" src="/activity/chu/รับรางวัลจุฬา.jpg" alt="Avatar">
+                                <div class="container">
+                                    <h4><b>High-school Talent Project Competition 2023</b></h4> 
+                                    <p>จุฬาลงกรณ์มหาวิทยาลัย</p> 
+                                </div>
+                            </a></div></center>
+
+                            <center><div class="card" ><a href="activities.html?id=2">
+                                <img loading="lazy" src="/activity/envi/รับรางวัลEnvi.jpg" alt="Avatar" style="width:100%">
+                                <div class="container">
+                                    <h4><b>การแข่งขัน EnviMission 4<br>ภารกิจรักษ์สิ่งแวดล้อม ปีที่ 4</b></h4> 
+                                    <p>จุฬาลงกรณ์มหาวิทยาลัย</p> 
+                                </div>
+                            </a></div></center>
+
+                            <center><div class="card" ><a href="activities.html?id=3">
+                                <img loading="lazy" src="/activity/posn/สอวน..jpg" alt="Avatar" style="width:100%">
+                                <div class="container">
+                                    <h4><b>ค่ายสอวน.คอมพิวเตอร์ ค่าย 1</b></h4> 
+                                    <p>มหาลัยสงขลานครินทร์</p> 
+                                </div>
+                            </a></div></center>
+
+                            <center><div class="card" ><a href="activities.html?id=4">
+                                <img loading="lazy" src="/activity/ITCamp19/GetCerITCamp.jpg" alt="Avatar" style="width:100%">
+                                <div class="container">
+                                    <h4><b>ค่าย IT Camp 19</b></h4> 
+                                    <p>สถาบันเทคโนโลยีพระจอมเกล้า<br>เจ้าคุณทหารลาดกระบัง</p> 
+                                </div>
+                            </a></div></center>
+
+                            <center><div class="card" ><a href="activities.html?id=5">
+                                <img loading="lazy" src="/activity/หัตถกรรม/แข่งหัตถกรรมภาค.jpg" alt="Avatar">
+                                <div class="container">
+                                    <h4><b>แข่งขันโครงงานวิทยาศาสตร์<br>ศิลปหัตถกรรมครั้งที่ 70</b></h4> 
+                                    <p style="letter-spacing: -1.1px;">สำนักงานคณะกรรมการการศึกษาขั้นพื้นฐาน</p> 
+                                </div>
+
+                                
+                            </a></div></center>
+
+                            <center><div class="card" ><a href="activities.html?id=6">
+                                <img loading="lazy" src="/activity/psu/พัฒนาเกมมอ.jpg" alt="Avatar" style="width:100%">
+                                <div class="container">
+                                    <h4>การแข่งขันพัฒนาเกม<br>ด้วยโปรแกรมเชิงทัศน์</b></h4> 
+                                    <p>มหาลัยสงขลานครินทร์</p> 
+                                </div>
+                            </a></div></center>
+
+                            <center><div class="card" ><a href="activities.html?id=7">
+                                <img loading="lazy" src="/activity/tu/แข่งโครงงานมอทักษิณ.jpg" alt="Avatar" style="width:100%">
+                                <div class="container">
+                                    <h4><b>การแข่งขันโครงงานสิ่งประดิษฐ์<br>สัปดาห์วิทยาศาสตร์แห่งชาติ</b></h4> 
+                                    <p>มหาลัยทักษิณ วิทยาเขตพัทลุง</p> 
+                                </div>
+                            </a></div></center>
+
+                            <center><div class="card" ><a href="activities.html?id=8">
+                                <img loading="lazy" src="/activity/Tech/TechEd ประเทศ.png" alt="Avatar" style="width:100%">
+                                <div class="container">
+                                    <h4><b>แข่งขันความถนัดด้านทักษะนวัตกรรม <br> ทางวิทยาศาสตร์ ระดับประเทศ</b></h4> 
+                                    <p>TechEducation</p> 
+                                </div>
+                            </a></div></center>
+
+                            <center><div class="card" ><a href="activities.html?id=9">
+                                <img loading="lazy" src="/activity/TSC15/activity3.jpg" alt="Avatar" style="width:100%">
+                                <div class="container">
+                                    <h4><b>ค่าย Thai Science Camp 15</b></h4> 
+                                    <p>อพวช. สพฐ. และ สมาคมวิทยาศาสตร์แห่งประเทศไทย</p> 
+                                </div>
+                            </a></div></center>
+
+                            <center><div class="card" ><a href="activities.html?id=10">
+                                <img loading="lazy" src="/activity/mos/แข่ง mos.jpg" alt="Avatar" style="width:100%">
+                                <div class="container">
+                                    <h4><b>MOSCAMP Songkhla</b></h4> 
+                                    <p>Microsoft</p> 
+                                </div>
+                            </a></div></center>
+
+                            <center><div class="card" ><a href="activities.html?id=11">
+                                <img loading="lazy" src="/activity/mv/เป็นวิทยากร.jpg" alt="Avatar" style="width:100%">
+                                <div class="container">
+                                    <h4><b>วิทยาการในงาน OpenHouse </b></h4> 
+                                    <p>ณ โรงเรียนมหาวชิราวุธ <br> จังหวัดสงขลา</p> 
+                                </div>
+                            </a></div></center>
+
+                            <center><div class="card" ><a href="activities.html?id=12">
+                                <img loading="lazy" src="/activity/งานวัด/ยุวพุทายาท.png" alt="Avatar" style="width:100%">
+                                <div class="container">
+                                    <h4><b>ปฏิบัติจิตอาสา<br>ในโครงการต่าง ๆ ทางศาสนา</b></h4> 
+                                    <p>วัดไทรงาม และ โรงเรียนดาวนายร้อย</p> 
+                                </div>
+                            </a></div></center>
+
+                            <center><div class="card" ><a href="activities.html?id=13">
+                                <img loading="lazy" src="/activity/ปลูกป่า/ปลูกต้นไม้.png" alt="Avatar" style="width:100%">
+                                <div class="container">
+                                    <h4><b>กิจกรรมจิตอาสาปลูกป่าชายเลนและปล่อยลูกปูม้า</b></h4> 
+                                    <p>ณ ชมรมอนุรักษ์ป่าชายเลน</p> 
+                                </div>
+                            </a></div></center>
+
+                            <center><div class="card" ><a href="activities.html?id=14">
+                                <img loading="lazy" src="/activity/GTC/cer.png" alt="Avatar" style="width:100%">
+                                <div class="container">
+                                    <h4><b>GTC : web design skills <br> for university applicants </b></h4> 
+                                    <p>global technology club สจล.</p> 
+                                </div>
+                            </a></div></center>
+
+                            <center><div class="card" ><a href="activities.html?id=15">
+                                <img loading="lazy" src="/activity/sololearn/sololearn HTML.png" alt="Avatar" style="width:100%">
+                                <div class="container">
+                                    <h4><b>การแข่งขันฟิสิกส์สัปประยุทธ์<br>ระดับชาติ</b></h4> 
+                                    <p>กระทรวงศึกษาธิการ</p> 
+                                </div>
+                            </a></div></center>
+
+                            <center><div class="card" ><a href="activities.html?id=16">
+                                <img loading="lazy" src="/activity/sololearn/sololearn HTML.png" alt="Avatar" style="width:100%">
+                                <div class="container">
+                                    <h4><b>การแข่งขันฟิสิกส์สัปประยุทธ์<br>ระดับชาติ</b></h4> 
+                                    <p>กระทรวงศึกษาธิการ</p> 
+                                </div>
+                            </a></div></center>
+
+                            <center><div class="card" ><a href="activities.html?id=17">
+                                <img loading="lazy" src="/activity/sololearn/sololearn HTML.png" alt="Avatar" style="width:100%">
+                                <div class="container">
+                                    <h4><b>การแข่งขันฟิสิกส์สัปประยุทธ์<br>ระดับชาติ</b></h4> 
+                                    <p>กระทรวงศึกษาธิการ</p> 
+                                </div>
+                            </a></div></center>
+
+
+                            </div>
+
+                        </div>
+                        <i id="angleRight" class="fa-solid fa-angle-right fa-beat-fade"></i>
+                    </div>
+                    </td>
+                </tr>
+
+                <tr height="30px"></tr>
+
+                <!-- <tr height="50px" align="center">
+                    <td colspan="3"><div class="section" id="gold" style="margin-top: 10px; margin-bottom: 10px;">High-school Talent Project Competition 2023</div></td>
+                </tr>
+                <tr height="375px" align="center">
+                    <td colspan="3" align="center"><img loading="lazy" src="/activity/chu/เกียรติบัตรจุฬา.jpg" width="400px" height="300px"></td>
+                </tr>
+                <tr height="375px" align="center">
+                    <td colspan="2" align="center"><img loading="lazy" src="/activity/chu/แข่งจุฬา.jpg" width="400px" height="300px"></td>
+                    <td align="center"><img loading="lazy" src="/activity/chu/รับรางวัลจุฬา.jpg" width="400px" height="300px"></td>
+                </tr>
+                <tr height="100px">
+                    <td colspan="3" align="center">
+                        <div class="detail">
+                            เป็นรายการแข่งขันที่ คณะวิศวกรรมศาสตร์ จุฬาลงกรณ์มหาวิทยาลัยได้จัดขึ้นเนื่องในงาน Open House ผมได้เเข่งขันในโครงงานหมวดพลังงาน
+                            โดยใช้โครงงานทุ่นลอยน้ำไดนาโม ซึ่งเป็นสิ่งประดิษฐ์ที่สามารถผลิตพลังงานไฟฟ้าได้โดยอาศัยพลังงานจากคลื่นทะเล เราอาศัยหลังการของไมเคิล ฟาราเดย์
+                            ในการผลิตพลังงานไฟฟ้า โดยผูกสปริงไว้ทั้งสองข้างของแม่เหล็ก ซึ่งวางตัวไว้ในแนวดิ่งภายในอุโมงขดลวด ในการแข่งขันครั้งนี้ ทีมของผมได้รับรางวัลชนะเลิศกลับมา
+                        </div>
+                    </td>
+                </tr>
+
+                <tr height="50px" align="center">
+                    <td colspan="3"><div class="section" id="gold" style="margin-top: 100px;">แข่งขันโครงงานวิทยาศาสตร์<br>ศิลปหัตถกรรม</div></td>
+                </tr>
+                <tr height="375px" align="center">
+                    <td colspan="3" align="center"><img loading="lazy" src="/activity/หัตถกรรม/เกียรติบัตรหัตถกรรมประเทศ.jpg" width="400px" height="300px"></td>
+                </tr>
+                <tr height="375px" align="center">
+                    <td colspan="2" align="center"><img loading="lazy" src="/activity/หัตถกรรม/แข่งหัตถกรรมภาค.jpg" width="400px" height="300px"></td>
+                    <td align="center"><img loading="lazy" src="/activity/หัตถกรรม/แข่งหัตถกรรมประเทศ.jpg" width="400px" height="300px"></td>
+                </tr>
+                <tr height="100px">
+                    <td colspan="3" align="center">
+                        <div class="detail">
+                            ผมได้เข้าร่วมแข่งขันในรายการโครงงานสิ่งประดิษฐ์ ในงานศิลปหัตถกรรมครั้งที่ 70 โดยทีมของผมได้ส่งโครงงานทุ่นลอยน้ำไดนาโม และได้รับรางวัล เหรียญทองชนะเลิศ ระดับชาติ กลับมา
+                        </div>
+                    </td>
+                </tr>
+
+                <tr height="50px" align="center">
+                    <td colspan="3"><div class="section" id="gold" style="margin-top: 100px;">การแข่งขันฟิสิกส์สัปประยุทธ์</div></td>
+                </tr>
+                <tr height="375px" align="center">
+                    <td colspan="2" align="center"><img loading="lazy" src="/activity/iypt/แข่งฟิสิกส์สัปภาค.jpg" width="400px" height="300px"></td>
+                    <td colspan="2" align="center"><img loading="lazy" src="/activity/iypt/แข่งฟิสิกส์สัปประเทศ.jpg" width="400px" height="300px"></td>
+                </tr>
+                <tr height="375px" align="center">
+                    <td colspan="2" align="center"><img loading="lazy" src="/activity/iypt/รับรางวัลฟิสิกส์สัปทีม.jpg" width="400px" height="300px"></td>
+                    <td colspan="2" align="center"><img loading="lazy" src="/activity/iypt/เกียรติบัตรฟิสิกส์สัปประเทศ.jpg" width="400px" height="300px"></td>
+                </tr>
+                <tr height="100px">
+                    <td colspan="3" align="center">
+                        <div class="detail">
+                            เป็นการแข่งขันในรูปแบบการโต้วาทีเชิงวิชาการ โดยการแก้โจทย์ปัญหาปลายเปิด ออกแบบการทดลองและศึกษาทฤษฎีของโจทย์ปัญหา 10 ข้อ โดยนักเรียน 5 คน
+                            ในการแข่งขันครั้งนี้นอกจากจะได้ความรู้ทางฟิสิกส์แล้ว ยังทำให้ผมได้ทักษะกระบวนการทำงานเป็นทีม การออกแบบวิธีการแก้ปัญหา และการประดิษฐ์อุปกรณ์เครื่องมือเพื่อแก้ปัญหา                     
+                            ซึ่งสามารถนำมาประยุกต์ใช้ในการทำงานของผมได้ และการเเข่งขันครั้งนี้ทีมของผมได้รับรางวัลเหรียญทองระดับชาติกลับมา
+                        </div>
+                    </td>
+                </tr>
+
+                <tr height="50px" align="center">
+                    <td colspan="3"><div class="section" id="gold" style="margin-top: 100px;">สอวน.คอมพิวเตอร์ ค่าย 1</div></td>
+                </tr>
+                <tr height="375px" align="center">
+                    <td colspan="3" align="center"><img loading="lazy" src="/activity/posn/สอวน..jpg" width="417px" height="300px"></td>
+                </tr>
+                <tr height="100px">
+                    <td colspan="3" align="center" valign="top">
+                        <div class="detail">
+                            ผมได้มีโอกาสเข้าค่ายสอวน.ค่าย 1 สาขาวิชาคอมพิวเตอร์ ณ โรงเรียนดีบุกพังงาวิทยายน
+                            จากการผ่านการสอบคัดเลือก โดยศูนย์มหาวิทยาลัยสงขลานครินทร์ จากการเข้าค่ายสอวน.เป็นเวลา 15 วัน ทำให้ผมมีความรู้ในการเขียนโปรแกรมภาษา C มากในระดับที่ผมสามารถเขียนโปรแกรมแก้ปัญหาทางคณิตศาสตร์ได้ 
+                            และได้เจอคุณครูและเพื่อนๆที่เก่งทางด้านคอมพิวเตอร์ในระดับต้นๆของภาคใต้ ถึงแม้ผมจะไม่ได้รับคัดเลือกเข้าสู่ ค่าย 2 แต่การเข้าค่ายนี้ถือเป็นจุดสำคัญที่ทำให้ผมเริ่มต้นศึกษาเรื่องการเขียนโปรแกรมอย่างจริงจังมากขึ้น
+                        </div>
+                    </td>
+                </tr>
+
+                <tr height="50px" align="center">
+                    <td colspan="3"><div class="section" id="gold" style="margin-top: 100px;">โครงงานสัปดาห์วิทยาศาตร์ ม.ทักษิณ พัทลุง</div></td>
+                </tr>
+                <tr height="375px" align="center">
+                    <td colspan="2" align="center"><img loading="lazy" src="/activity/tu/โครงงานมอทักษิณ.jpg" width="424px" height="300px"></td>
+                    <td colspan="2" align="center"><img loading="lazy" src="/activity/tu/แข่งโครงงานมอทักษิณ.jpg" width="424px" height="300px"></td>
+                </tr>
+                <tr height="100px">
+                    <td colspan="3" align="center">
+                        <div class="detail">
+                            ผมได้เข้าร่วมแข่งขันโครงงานสิ่งประดิษฐ์ในสัปดาห์วิทยาศาสตร์ ณ มหาลัยทักษิณ วิทยาเขตพัทลุง ผมได้ทำโครงงานกระเป๋าอัจฉริยะช่วยเหลือผู้พิการทางสายตา
+                            ซึ่งเป็นสิ่งประดิษฐ์ที่จะส่งเสียงให้ผู้พิการทางสายตาได้ยินเมื่อตรวจพบวัตถุในบริเวณข้างหน้า โดยอาศัย Module Ultrasonic ในการปล่อยคลื่นเสียง
+                            Ultrasonic เพื่อตรวจจับวัตถุในบริเวณข้างหน้า และผมได้รับรางวัลเหรียญทองจากการเเข่งขันโครงงานในครั้งนี้
+                        </div>
+                    </td>
+                </tr>
+
+                <tr height="50px" align="center">
+                    <td colspan="3"><div class="section" style="margin-top: 100px;">Thai Science Camp 15</div></td>
+                </tr>
+                <tr height="375px" align="center">
+                    <td colspan="2" align="center"><img loading="lazy" src="/activity/TSC15/activity1.jpg" width="400px" height="300px"></td>
+                    <td colspan="2" align="center"><img loading="lazy" src="/activity/TSC15/activity3.jpg" width="400px" height="300px"></td>
+                </tr>
+                <tr height="375px" align="center">
+                    <td colspan="2" align="center"><img loading="lazy" src="/activity/TSC15/activity2.jpg" width="400px" height="300px"></td>
+                    <td colspan="2" align="center"><img loading="lazy" src="/activity/TSC15/certificate.jpg" width="400px" height="300px"></td>
+                </tr>
+                <tr height="100px">
+                    <td colspan="3" align="center">
+                        <div class="detail">
+                            ผมได้รับคัดเลือกเป็นนักเรียน 1 ใน 150 คน ของประเทศไทยที่ได้เข้าร่วมค่าย Thai Science Camp 15 ซึ่งจัดขึ้นโดย
+                            อพวช. สพฐ. และ สมาคมวิทยาศาสตร์แห่งประเทศไทย การเข้าร่วมค่ายนี้ทำให้ผมได้เจอเพื่อนใหม่ๆ จากต่างสาขา และ
+                            ได้มีโอกาสเสนอแนวคิดโครงงานในค่าย โครงงานของทีมผมนั้นได้รับคัดเลือกเป็นโครงงานประจำสาขาวิศวกรรมศาสตร์
+                            และเมื่อไปเเข่งขันกับสาขาอื่นๆในค่าย ทำให้ทีมของผมได้รับรางวัล Popular Vote กลับมา นอกจากนี้ผมยังได้ไปพบกับ
+                            นักวิทยาศาตร์และอาจารย์หลายๆท่านในค่ายอีกด้วย 
+                        </div>
+                    </td>
+                </tr>
+                
+                <tr height="50px" align="center">
+                    <td colspan="3"><div class="section" style="margin-top: 100px; margin-bottom: 10px;">ITCamp 19 สจล.</div></td>
+                </tr>
+                <tr height="375px" align="center" >
+                    <td colspan="2" align="center" ><img loading="lazy" src="/activity/ITCamp19/ITCampimg.jpg" width="417px" height="300px"></td>
+                    <td align="center"><img loading="lazy" src="/activity/ITCamp19/TeamITCamp.jpg" width="417px" height="300px"></td>
+                </tr>
+                <tr height="375px" align="center" >
+                    <td colspan="2" align="center" ><img loading="lazy" src="/activity/ITCamp19/GetCerITCamp.jpg" width="417px" height="300px"></td>
+                    <td align="center"><img loading="lazy" src="/activity/ITCamp19/ITCampCert.jpg" width="417px" height="300px"></td>
+                </tr>
+                <tr height="100px">
+                    <td colspan="3" align="center" valign="top">
+                        <div class="detail">
+                            ผมได้รับคัดเลือกในการเข้าค่าย ITCamp19 ณ สถาบันเทคโนโลยีพระจอมเกล้าเจ้าคุณทหารลาดกระบัง ซึ่งผมตัดสินใจเลือกค่ายย่อยเป็นค่ายแอปพลิเคชั่น
+                            ผมนอกจากผมได้เจอเพื่อใหม่ๆ และในทำกิจกรรมสันาการกับเพื่อนๆในค่ายเเล้ว ผมยังได้เรียนรู้การเขียนแอปพลิเคชั่นด้วย React-Native อีกด้วย
+                            และได้นำความรู้จากการเรียบนจากพี่ๆในค่าย ผมยังได้มีโอกาสทำ Mini-Project กับทีมเพื่อนในค่าย โดยทีมของผมได้ทำ App สังคมออนไลน์
+                            ที่ user สามารถ post ได้โดยไม่มีการระบุตัวตน ซึ่งทีมของผมได้รับรางวัลรองชนะเลิศในการนำเสนอ Mini-Project ในค่ายนี้
+                        </div> 
+                    </td>
+                </tr>
+
+                <tr height="50px" align="center">
+                    <td colspan="3"><div class="section" style="margin-top: 100px; margin-bottom: 10px;">Career Essentials in Software Development</div></td>
+                </tr>
+                <tr height="375px" align="center">
+                    <td colspan="3" align="center"><img loading="lazy" src="/activity/softeng/softeng.jpg" width="388px" height="300px"></td>
+                </tr>
+                <tr height="100px">
+                    <td colspan="3" align="center">
+                        <div class="detail">
+                            ผมได้เค้าเรียนคอร์สเรียนออนไลน์ของ Microsoft และ LinkedIn ซึ่งเป็นบทเรียนเกี่ยวกับ Software Development
+                            หลังจากเรียนจบคอร์สนี้ผมได้ทำแบบทดสอบและได้คะแนนผ่านเกณฑ์ผมจึงได้รับเดียรติบัตรรับรองจาก Microsoft
+                            และทำให้ผมได้รับความรู้ในด้านการเขียนโปรแกรมด้วยภาษาคอมพิวเตอร์ต่างๆ โดยเฉพาะภาษา python ซึ่งสามารถนำความรู้ที่ได้
+                            ไปประยุกต์ใช้กับการเขียนโปรแกรมของตนเองได้ 
+                        </div>
+                    </td>
+                </tr>
+
+                <tr height="50px" align="center">
+                    <td colspan="3"><div class="section" style="margin-top: 100px;">MOSCAMP Songkhla</div></td>
+                </tr>
+                <tr height="375px" align="center">
+                        <td colspan="3" align="center"><img loading="lazy" src="/activity/mos/เกียรติบัตร mos.jpg" width="400px" height="300px"></td>
+                </tr>
+                <tr height="375px" align="center">
+                    <td colspan="3" align="center"><img loading="lazy" src="/activity/mos/แข่ง mos.jpg" width="533px" height="300px"></td>
+                </tr>
+                <tr height="100px">
+                    <td colspan="3" align="center">
+                        <div class="detail">
+                            เป็นรายการแข่งขันความเชี่ยวชาญในการใช้งานโปรแกรม Microsoft ผมได้ลงเเข่งขันในโปรแกรม Microsoft Word
+                            ผมได้ผ่านการคัดเลือกและได้เข้าค่าย MOSCAMP Songkhla ณ มหาวิทยาลัยราชภัฏสงขลา และได้เข้าอบรมเป็นเวลา 3 วัน การอบรมครั้งนี้
+                            ทำให้ผมได้รับความรู้ใหม่เกี่ยวกับการใช้โปรแกรม Mictosoft Word เป็นอย่างมาก สามารถใช้ โปรแกรม Microsoft Word ได้อย่างชำนาญ 
+                            และได้รับเกียรติบัตรรับรองความเชี่ยวชาญในการใช้งานจาก Microsoft เนื่องจากทำข้อสอบปฏิบัติได้ในคะแนนที่ผ่านเกณฑ์ 70% ซึ่งผมได้ 868 จาก 1000 คะแนน
+                        </div>
+                    </td>
+                </tr>
+
+                <tr height="50px" align="center">
+                    <td colspan="3"><div class="section" style="margin-top: 100px;">Coding Game เขียนโปรแกรมแก้ปัญหาด้วยภาษา C</div></td>
+                </tr>
+                <tr height="375px" align="center">
+                    <td colspan="3" align="center"><img loading="lazy" src="/activity/coding game/codinggame.jpg" width="388px" height="300px"></td>
+                </tr>
+                <tr height="100px">
+                    <td colspan="3" align="center">
+                        <div class="detail">
+                            ผมได้เข้าร่วมการทดสอบการเขียนโปรแกรมแก้ปัญหาด้วยภาษา C ผ่านเว็บไซต์ Coding Game และผมสามารถทำคะแนนได้ผ่านเกณฑ์
+                            จึงได้เกียรติบัตรรับรองทักษะการเขียนโปรแกรมแก้ปัญหาด้วยภาษา C จากทางเว็บไซต์
+                        </div>
+                    </td>
+                </tr>
+
+                <tr height="50px" align="center">
+                    <td colspan="3"><div class="section" style="margin-top: 100px;">เป็นวิทยากรแนะนำแลปฟิสิกส์<br>ในงาน Open house</div></td>
+                </tr>
+                <tr height="375px" align="center">
+                    <td colspan="3" align="center"><img loading="lazy" src="/activity/mv/เป็นวิทยากร.jpg" width="400px" height="300px"></td>
+                </tr>
+                <tr height="100px">
+                    <td colspan="3" align="center">
+                        <div class="detail">
+                            ในงาน Open House ของโรงเรียนมหาวชิราวุธ จังหวัดสงขลา ผมในฐานะที่เป็นนักเรียนโครงการห้องเรียนพิเศษ SMTE 
+                            และเป็นนักเรียนที่ใช้ห้องแลปฟิสิกส์ในการทำงาน ผม เพื่อนๆ และคุณครู จึงทำหน้าที่เป็นวิทยากรในการบรรยายและแนะนำห้องแลปฟิสิกส์ของโรงเรียน 
+                            ให้น้องๆจากโรงเรียนประถมศึกษา โดยผมเเละเพื่อนๆ รับหน้าที่ในการบรรยายหัวข้อโครงงานที่ผมได้รับรางวัลชนะเลิศกลับมา
+                        </div>
+                    </td>
+                </tr>
+
+                <tr height="50px" align="center">
+                    <td colspan="3"><div class="section" style="margin-top: 100px;">ศึกษาความรู้ด้านการเขียนโปรแกรมเพิ่มเติม</div></td>
+                </tr>
+                <tr height="375px" align="center">
+                    <td colspan="2" align="center"><img loading="lazy" src="/activity/sololearn/sololearn C.png" width="400px" height="300px"></td>
+                    <td align="center"><img loading="lazy" src="/activity/sololearn/sololearn HTML.png" width="400px" height="300px"></td>
+                </tr>
+                <tr height="375px" align="center">
+                    <td colspan="2" align="center"><img loading="lazy" src="/activity/sololearn/sololearn JavaScript.png" width="400px" height="300px"></td>
+                    <td align="center"><img loading="lazy" src="/activity/sololearn/sololearn JavaScript Game.png" width="400px" height="300px"></td>
+                </tr>
+                <tr>
+                    <td colspan="2" align="center"><img loading="lazy" src="/activity/sololearn/sololearn Python.png" width="400px" height="300px"></td>
+                    <td align="center"><img loading="lazy" src="/activity/sololearn/sololearn JAVA.png" width="400px" height="300px"></td>
+                </tr>
+                <tr height="100px">
+                    <td colspan="3" align="center">
+                        <div class="detail" style="margin-bottom: 75px; margin-top: 50px;">
+                            นอกจากผมจะไปเข้าค่าย และแข่งขันในระดับต่างๆแล้ว ผมยังศึกษาความรู้ในเรื่องการเขียนโปรแกรมเพิ่มเติมในเวลาว่าง ซึ่งเป็นสิ่งที่ผมสนใจ
+                            ผมได้เข้าคอร์สเรียนโปรแกรมในภาษาต่างๆ ได้แก่ ภาษา C ,HTMl ,JavaScript ,การพัฒนาเกมด้วย JavaScript ,Python และ Java
+                        </div>
+                    </td>
+                </tr> -->
+
+            </table></center>
+        </div>
+
+        <div style="border: px solid red;" class="portfolio" id="portfolio">
+            <center><table align="center" width="1250px" border = "0px">
+                <tr>
+                    <td width="633px" height="100px" colspan="3"></td>
+                </tr>
+                <tr>
+                    <td width="633px" height="100px" colspan="3" align = "center"><h1>My Portfolio</h1></td>
+                </tr>
+                <tr>
+                    <td width="633px" height="20px" colspan="3"></td>
+                </tr>
+                <tr>
+                    <td><center><iframe loading="lazy" src="https://drive.google.com/file/d/1IvNCuOyGJJT4K323_4nZfERD56LG9P0F/preview" width="580" height="820" allow="autoplay"></iframe></center></td>
+                </tr>
+
+
+            </table></center>
+        </div>
+        
+        <div class="foot">
+            <table class="tb" border="0px" style="background: #0B2D6A;"><tr><td>
+                <table align="center" border="0px" height="100%" style="background: #0B2D6A;">
+                    <tr>
+                        <td width="10px"><j class=""></j></td>
+                        <td width="25px"><j class="contact"></j></td>
+                        <td width="340px"><j class="contact">ช่องทางการติดต่อ</j></td>
+                        <td></j></td>
+                        <td width="340px"><j class=""></j></td>
+                        <td width="310px"><j class=""></j></td>
+                        <td width= "250px" align="center" valign="top" colspan="2" rowspan="2" width="125px"><t class="Thank">ขอขอบคุณ</t></td>
+                        <td width="10px"><j class=""></j></td>
+                    </tr>
+                    <tr>
+                        <td><j class=""></j></td>
+                        <td align="center"><i class="fa-solid fa-envelope" style="color: #ffffff; font-size: 25px;"></i></td>
+                        <td><a class="email" href="mailto:hanpon.petch@gmail.com">email : hanpon.petch@gmail.com</a></td>
+                        <td align="center"><i class="fa-brands fa-line" style="color: #ffffff; font-size: 25px;"></i></td>
+                        <td><a class="line" href="https://l.facebook.com/l.php?u=https%3A%2F%2Fline.me%2Fti%2Fp%2FnIWpRKzaay%3Ffbclid%3DIwAR2OBYmEPPJu5J54R3ZJxgTw2txV8kA0O04i2EsohDNGEKVTor-wpF72CZM&h=AT3PWXhhndaw_HBXgLcZGsRvEqSEhwYBsQdRc27o1nexwXqK-d1OPbFLM0ndntgTXPOeChUnFcrq6addQF2E8Vcr9bf-rDLigYrFUS0m-j-UL12H7Z0_F367HWArGFo3bbkhmAtvevhLyU-8HaqZMw">Line ID : 093753118</a></td>
+                        <td><j class=""></j></td>
+                        <td><j class=""></j></td>
+                    </tr>
+                    <tr>
+                        <td><j class=""></j></td>
+                        <td align="center"><i class="fa-solid fa-phone" style="color: #ffffff; font-size: 25px;"></i></td>
+                        <td><a class="tel" href="tel:+6636901973">Tel : 0936901973</a></td>
+                        <td align="center"><i class="fa-brands fa-square-instagram" style="color: #ffffff; font-size: 25px;"></i></td>
+                        <td><a class="ig" href="https://www.instagram.com/hanpon_/">Instagram : hanpon_</a></td>
+                        <td><j class=""></j></td>
+                        <td rowspan="2"><img loading="lazy" class="Chu" src="https://4.bp.blogspot.com/-7fqni5Ha8L0/TxxeQtvLyYI/AAAAAAAACDM/P1oU8tk6qXA/s1600/%25D8%25AF%25D8%25B1%2B%25D8%25AA%25D8%25A7%25DB%258C%25D9%2584%25D9%2586%25D8%25AF%2B%25E0%25A4%25A5%25E0%25A4%25BE%25E0%25A4%2588%25E0%25A4%25B2%25E0%25A5%2588%25E0%25A4%2582%25E0%25A4%25A1%2B%25E0%25A4%25AE%25E0%25A5%2587%25E0%25A4%2582%2B%25E0%25A4%25B5%25E0%25A4%25BF%25E0%25A4%25B6%25E0%25A5%258D%25E0%25A4%25B5%25E0%25A4%25B5%25E0%25A4%25BF%25E0%25A4%25A6%25E0%25A5%258D%25E0%25A4%25AF%25E0%25A4%25BE%25E0%25A4%25B2%25E0%25A4%25AF%25E0%25A5%258B%25E0%25A4%2582%2BChulalongkorn-Universit%25C3%25A4t%2B%25E5%25A4%25A7%25E5%25AD%25B8%25E5%259C%25A8%25E6%25B3%25B0%25E5%259C%258B.png" height="95px"></td>
+                        <td rowspan="2"><img loading="lazy" class="Eng" src="https://upload.wikimedia.org/wikipedia/th/f/f6/EngCU_Gear.png" width="95px" height="95px"></td>
+                        <td ><j class=""></j></td>
+                    </tr>
+                    <tr>
+                        <td><j class=""></j></td>
+                        <td align="center"><i class="fa-brands fa-facebook" style="color: #ffffff; font-size: 25px;"></i></td>
+                        <td><a class="facebook" href="https://www.facebook.com/profile.php?id=100024313590641">Facebook : หาญพล พรหมสมบัติ</a></td>
+                        <td><j class="contact"></j></td>
+                        <td><j class=""></j></td>
+                        <td><j class=""></j></td>
+                        <td><j class=""></j></td>
+                    </tr>
+                </table>
+            </td></tr></table>
+        </div>
+
+        
+
+    </body>
+</html>

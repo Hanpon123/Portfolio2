@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <title>Activities</title>
+    <link rel="shortcut icon" type="image/x-icon" href="/img/เพชร.png" />
+    <link rel = "stylesheet" href="Standard.css">
+    <link rel = "stylesheet" href = "Activity.css">
+    <link rel = "stylesheet" href = "Home.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pridi:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Leckerli+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div class="start">
+
+    </div>
+
+    <div class="content">
+
+    </div>
+
+    <div class="foot" style="margin-top: 100px;">
+    
+    </div>
+
+    <script src="activities.js"></script>
+
+    <script>
+        var currentURL = window.location.search;
+        var urlParams = new URLSearchParams(currentURL);
+        var id = urlParams.get('id');
+        var cardStart = document.querySelector(".start")
+        var content = document.querySelector(".content")
+        var cardFoot = document.querySelector(".foot")
+        var activityCode = window['activity'+id];
+        
+        cardStart.innerHTML=start
+        if(activityCode){
+            content.innerHTML=activityCode
+        }else{
+            content.innerHTML=error
+        }
+        cardFoot.innerHTML=foot
+
+    </script>
+
+</body>
+</html>

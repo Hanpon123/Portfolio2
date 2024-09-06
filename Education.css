@@ -1,0 +1,50 @@
+.education h1{
+    font-size: 60px;
+    color:#0B2D6A;
+    font-family: 'Pridi', serif;
+    font-weight: bolder;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.education .level{
+    font-family: 'Pridi', serif;
+    font-size: 24px;
+    border-radius: 25px;
+    background: #0B2D6A;
+    color: white;
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-top: 10px;
+    padding-bottom: 10px; 
+    width: 200px;
+    box-shadow: 5px 5px #0f429f;
+    transition: 0.5s;
+    cursor: default;
+}
+
+.education .detail{
+    font-family: 'Pridi', serif;
+    font-size: 18px;
+    border-radius: 25px;
+    background: #0B2D6A;
+    color: white;
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-top: 10px;
+    padding-bottom: 10px; 
+    width: 255px;
+    box-shadow: 5px 5px #0f429f;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    transition: 0.5s;
+    cursor: default;
+}
+
+.education .level:hover{
+    background: #1f60d8;
+}
+
+.education .detail:hover{
+    background: #1f60d8;
+}
